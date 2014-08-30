@@ -1,62 +1,5 @@
-﻿<File>
-  <FileVersion>2.0</FileVersion>
-  <Assemblies>
-    <Assembly>System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</Assembly>
-    <Assembly>System.Management.Automation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35</Assembly>
-    <Assembly>System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</Assembly>
-    <Assembly>System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
-    <Assembly>mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</Assembly>
-    <Assembly>System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</Assembly>
-    <Assembly>System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</Assembly>
-    <Assembly>System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
-  </Assemblies>
-  <Packager>
-    <General>
-      <PackageName>
-      </PackageName>
-      <PackageIcon>
-      </PackageIcon>
-      <ManifestCreation>1</ManifestCreation>
-      <CustomManifest>
-      </CustomManifest>
-      <DeleteDataFiles>0</DeleteDataFiles>
-      <Platform>-1</Platform>
-      <RunSTA>0</RunSTA>
-    </General>
-    <Security>
-      <Username>
-      </Username>
-      <Password>
-      </Password>
-      <SignPackage>False</SignPackage>
-      <Certificate>
-      </Certificate>
-      <CertificatePassword>
-      </CertificatePassword>
-    </Security>
-    <Version>
-      <FileVersion>
-      </FileVersion>
-      <ProductVersion>
-      </ProductVersion>
-      <ProductName>
-      </ProductName>
-      <Description>
-      </Description>
-      <Company>
-      </Company>
-      <Copyright>
-      </Copyright>
-      <InternalName>
-      </InternalName>
-      <OriginalFileName>
-      </OriginalFileName>
-      <Comment>
-      </Comment>
-    </Version>
-  </Packager>
-  <Code>
-    <![CDATA[#Define a Param block to use custom parameters in the project
+﻿<File version="2">
+  <Code><![CDATA[#Define a Param block to use custom parameters in the project
 #Param ($CustomParameter)
 
 function Main {
@@ -67,7 +10,7 @@ function Main {
 	#Note: To get the console output in the Packager (Forms Mode) use: $ConsoleOutput (Type: System.Collections.ArrayList)
 	#TODO: Initialize and add Function calls to forms
 	
-	if((Call-MainForm_psf) -eq "OK")
+	if((Call-PowerLauncher_psf) -eq "OK")
 	{
 		
 	}
@@ -81,4 +24,16 @@ function Main {
 
 
 ]]></Code>
+  <Assemblies>
+    <Assembly>System.Management.Automation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35</Assembly>
+    <Assembly>mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</Assembly>
+    <Assembly>System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</Assembly>
+    <Assembly>System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</Assembly>
+    <Assembly>System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</Assembly>
+    <Assembly>System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+    <Assembly>System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</Assembly>
+    <Assembly>System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+    <Assembly>System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</Assembly>
+    <Assembly>System.ServiceProcess, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+  </Assemblies>
 </File>
