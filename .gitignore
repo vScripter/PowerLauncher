@@ -2,6 +2,10 @@
 Thumbs.db
 ehthumbs.db
 
+# PowerShell Studio Build Files
+*.psprojs
+*.psbuild
+
 # Folder config file
 Desktop.ini
 
@@ -26,7 +30,8 @@ $RECYCLE.BIN/
 .LSOverride
 
 # Icon must ends with two \r.
-Icon
+Icon
+
 
 # Thumbnails
 ._*
