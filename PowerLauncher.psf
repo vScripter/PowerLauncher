@@ -1584,10 +1584,10 @@ $formPowerLauncher_Close = {
 }
 
 $btnCustom1_Click = { Start-Process -FilePath $CustomButton1_Script }
-$btnCustom2_Click={ Start-Process -FilePath $CustomButton2_Script }
+$btnCustom2_Click = { Start-Process -FilePath $CustomButton2_Script }
 $btnCustom3_Click = { Start-Process -FilePath $CustomButton3_Script }
-$btnCustom4_Click={ Start-Process -FilePath $CustomButton4_Script }
-$btnCustom5_Click={ Start-Process -FilePath $CustomButton5_Script }
+$btnCustom4_Click = { Start-Process -FilePath $CustomButton4_Script }
+$btnCustom5_Click = { Start-Process -FilePath $CustomButton5_Script }
 $btnCustom6_Click = { Start-Process -FilePath $CustomButton6_Script }
 $btnCustom7_Click = { Start-Process -FilePath $CustomButton7_Script }
 $btnCustom8_Click = { Start-Process -FilePath $CustomButton8_Script }
