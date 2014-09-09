@@ -2,12 +2,25 @@
 # Declare Global Variables and Functions here
 #--------------------------------------------
 
-$ConfigFilePath = "$env:allusersprofile\PowerLauncher\PowerLauncher_Config.ps1"
+function Get-ScriptDirectory
+{
+	if ($hostinvocation -ne $null)
+	{
+		Split-Path $hostinvocation.MyCommand.path
+	} else
+	{
+		Split-Path $script:MyInvocation.MyCommand.Path
+	}
+}
+
+[string]$ScriptDirectory = Get-ScriptDirectory
+
+$ConfigFilePath = "$ScriptDirectory\PowerLauncher_Config.ps1"
 
 . $ConfigFilePath
 
-$Log = "$env:allusersprofile\PowerLauncher\PowerLauncher.log"
-$AppVersion = "v1.0.0"
+$Log = "$ScriptDirectory\PowerLauncher.log"
+$AppVersion = "v1.1.0"
 
 function Test-ConfigFile
 {
