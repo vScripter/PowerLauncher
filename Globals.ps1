@@ -27,12 +27,12 @@ function Load-ConfigFileVariables
 	$btnCustom2.Text = $CustomButton2_Text
 	$btnCustom3.Text = $CustomButton3_Text
 	$btnCustom4.Text = $CustomButton4_Text
-	$btnCustom4.Text = $CustomButton4_Text
 	$btnCustom5.Text = $CustomButton5_Text
 	$btnCustom6.Text = $CustomButton6_Text
 	$btnCustom7.Text = $CustomButton7_Text
 	$btnCustom8.Text = $CustomButton8_Text
 	$btnCustom9.Text = $CustomButton9_Text
+	$btnCustom10.Text = $CustomButton10_Text
 }
 
 function Load-Buttons
@@ -46,6 +46,7 @@ function Load-Buttons
 	if ($btnCustom7.Text -eq '') { $btnCustom7.Text = "Custom Button 7"; $btnCustom7.Enabled = $false }
 	if ($btnCustom8.Text -eq '') { $btnCustom8.Text = "Custom Button 8"; $btnCustom8.Enabled = $false }
 	if ($btnCustom9.Text -eq '') { $btnCustom9.Text = "Custom Button 9"; $btnCustom9.Enabled = $false }
+	if ($btnCustom10.Text -eq '') { $btnCustom10.Text = "Custom Button 10"; $btnCustom10.Enabled = $false }
 }
 
 Function logstamp
@@ -92,6 +93,7 @@ function Disable-Buttons
 	$btnCustom7.Enabled = $false
 	$btnCustom8.Enabled = $false
 	$btnCustom9.Enabled = $false
+	$btnCustom10.Enabled = $false
 }
 
 function Enable-Buttons
@@ -103,33 +105,12 @@ function Enable-Buttons
 	$btnCustom5.Enabled = $true
 	$btnCustom6.Enabled = $true
 	$btnCustom7.Enabled = $true
-	$btnCustom8.Enabled = $false
-	$btnCustom9.Enabled = $false
+	$btnCustom8.Enabled = $true
+	$btnCustom9.Enabled = $true
+	$btnCustom10.Enabled = $false
 }
 
 function Clear-Formats
 {
 	$lbStatus.Text = $null
 }
-
-
-
-<# Sample Functions 
-
-#Sample function that provides the location of the script
-function Get-ScriptDirectory
-{
-	if ($hostinvocation -ne $null)
-	{
-		Split-Path $hostinvocation.MyCommand.path
-	} else
-	{
-		Split-Path $script:MyInvocation.MyCommand.Path
-	}
-}
-
-#Sample variable that provides the location of the script
-[string]$ScriptDirectory = Get-ScriptDirectory
-
-#>
-

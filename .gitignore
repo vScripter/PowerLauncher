@@ -5,6 +5,8 @@ ehthumbs.db
 # PowerShell Studio Build Files
 *.psprojs
 *.psbuild
+*.preview.ps1
+*.run.ps1
 
 # Folder config file
 Desktop.ini
