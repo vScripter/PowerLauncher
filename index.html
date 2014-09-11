@@ -35,7 +35,14 @@
 
 <p>A fully customization PowerShell GUI launch-pad. The original idea came from a similar GUI I developed for a family member in order to make it easy for them to open the apps that the commonly use. As part of that process, I started to expand the idea to something that catered more to a 'power-user' workflow; which really translated to something I could use to quickly modify the personality of a launch-pad type interface. </p>
 
-<p>The interface can be re-sized and the buttons will automatically change orientation for a bit more layout customization. The only requirement is that the config file and binary exist in the same directory. Being that it is portable, experiment with creating separate directories for different use cases; ex: a version for App Installations, a version for shortcuts/common apps, maybe a version that executes some report scripts, etc...</p>
+<p>The interface can be re-sized and the buttons will automatically change orientation for a bit more of a custom layout. The only requirement is that the config file and binary exist in the same directory. Being that it is portable, experiment with creating separate directories for different use cases; ex: a version for App Installations, a version for shortcuts/common apps, maybe a version that executes some report scripts, etc...</p>
+
+<h1>
+<h1>
+<a name="How It Works" class="anchor" href="#how-it-works"><span class="octicon octicon-link"></span></a>How It Works
+</h1>
+
+<p>Upon launch, the application looks for the config file and if it exists, it loads all of the variables and functions in. There are some import and mappings that occur in the Global.ps1 file that pull in and assign what's defined in the config file, to 'application' variables. When a button is pressed, it calls the function defined for that button in the config file. Thus, if you make changes to the variable names in the config file, things will almost certainly break.</p>
 
 <h1>
 <a name="getting-started" class="anchor" href="#getting-started"><span class="octicon octicon-link"></span></a>Getting Started</h1>
