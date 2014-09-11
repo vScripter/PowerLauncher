@@ -39,37 +39,28 @@
     https://github.com/vN3rd
 #>
 
-$tabPage1Title = "Apps"
-$tabPage2Title = "Directories"
+# Define title of launcher tabs
+$tabPage1Title = ""
+$tabPage2Title = ""
 
 # ===============================================================#
 # Tab Page 1 [Buttons 1-10 appear on the first tab]              #
 # ===============================================================#
 
-$CustomButton1_Text = "Google"
-function Button1-CustomFunction {
-    Start-Process -FilePath "http://www.google.com"
-}
+$CustomButton1_Text = ""
+function Button1-CustomFunction {}
 
-$CustomButton2_Text = "Cmder"
-function Button2-CustomFunction {
-    Start-Process -FilePath "C:\bin\cmder\cmder.exe"
-}
+$CustomButton2_Text = ""
+function Button2-CustomFunction {}
 
-$CustomButton3_Text = "IE"
-function Button3-CustomFunction {
-    Start-Process -FilePath "iexplore.exe"
-}
+$CustomButton3_Text = ""
+function Button3-CustomFunction {}
 
-$CustomButton4_Text = "OneNote"
-function Button4-CustomFunction {
-    Start-Process -FilePath "C:\Program Files (x86)\Microsoft Office\Office15\ONENOTE.exe"
-}
+$CustomButton4_Text = ""
+function Button4-CustomFunction {}
 
-$CustomButton5_Text = "Sublime Text 3"
-function Button5-CustomFunction {
-    Start-Process -FilePath "C:\Program Files\Sublime Text 3\sublime_text.exe"
-}
+$CustomButton5_Text = ""
+function Button5-CustomFunction {}
 
 $CustomButton6_Text = ""
 function Button6-CustomFunction {}
@@ -90,10 +81,8 @@ function Button10-CustomFunction {}
 # Tab Page 2 [Buttons 11-20 appear on the second tab]            #
 # ===============================================================#
 
-$CustomButton11_Text = "Github Dir"
-function Button11-CustomFunction {
-    Invoke-Item -Path "C:\GitHub"
-}
+$CustomButton11_Text = ""
+function Button11-CustomFunction {}
 
 $CustomButton12_Text = ""
 function Button12-CustomFunction {}
