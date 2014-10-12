@@ -12,7 +12,7 @@ function Tab-Title
 	{
 		$tabPg1.Text = $tabPage1Title
 	}
-	
+
 	if (($tabPage2Title -eq "") -or ($tabPage2Title -eq $null))
 	{
 		$tabPg2.Text = "Page 2"
@@ -55,8 +55,8 @@ function Load-ConfigFileVariables
 	$btnCustom18.Text = $CustomButton18_Text
 	$btnCustom19.Text = $CustomButton19_Text
 	$btnCustom20.Text = $CustomButton20_Text
-	
-	
+
+
 }
 
 function Load-Buttons
@@ -81,7 +81,7 @@ function Load-Buttons
 	if ($btnCustom18.Text -eq '') { $btnCustom18.Text = "Custom Button 18"; $btnCustom18.Enabled = $false }
 	if ($btnCustom19.Text -eq '') { $btnCustom19.Text = "Custom Button 19"; $btnCustom19.Enabled = $false }
 	if ($btnCustom20.Text -eq '') { $btnCustom20.Text = "Custom Button 20"; $btnCustom20.Enabled = $false }
-	
+
 }
 
 function logstamp
@@ -93,27 +93,27 @@ function logstamp
 	$dy = $now.Day.ToString()
 	$hr = $now.Hour.ToString()
 	$mi = $now.Minute.ToString()
-	
+
 	if ($mo.length -lt 2)
 	{
 		$mo = "0" + $mo #pad single digit months with leading zero
 	}
-	
+
 	if ($dy.length -lt 2)
 	{
 		$dy = "0" + $dy #pad single digit day with leading zero
 	}
-	
+
 	if ($hr.length -lt 2)
 	{
 		$hr = "0" + $hr #pad single digit hour with leading zero
 	}
-	
+
 	if ($mi.length -lt 2)
 	{
 		$mi = "0" + $mi #pad single digit minute with leading zero
 	}
-	
+
 	write-output $yr$mo$dy$hr$mi
 }
 
@@ -164,6 +164,126 @@ function Enable-Buttons
 	$btnCustom19.Enabled = $true
 	$btnCustom20.Enabled = $true
 
+}
+
+function Create-ConfigFile
+{
+	$ConfigFileData = '
+<#
+.SYNOPSIS
+    PowerLauncher Custom Configuration File
+.DESCRIPTION
+    This File should be placed in the directory where you intend to place the .exe file
+
+    All custom button names and functions defined here will be executed according to each button. If you modify variable names, the buttons will
+    not work; the application is hard coded to read in and apply these variable names in a certain way.
+
+    The functions will be loaded and pre-configured to execute for each button
+.EXAMPLE
+    $CustomButton1_Text = "Google"
+    function Button1-CustomFunction {
+    Start-Process -FilePath "http://www.google.com"
+    }
+
+    This would configure the button named "Custom Buttom 1" to open google.com, using the Start-Process cmdlet
+.EXAMPLE
+    $CustomButton11_Text = "Github Dir"
+    function Button11-CustomFunction {
+    Invoke-Item -Path "C:\GitHub"
+    }
+
+    This would configure the button named "Custom Button 11" to open the "C:\GitHub" directory, using the Invoke-Item cmdlet
+.NOTES
+    [+] 20140909_K.Kirkpatrick_Created
+    [+] 20140910_K.Kirkpatrick_Modified format to accomidate new button format
+
+[-------------------------------------DISCLAIMER-------------------------------------]
+ All script are provided as-is with no implicit
+ warranty or support. It is always considered a best practice
+ to test scripts in a DEV/TEST environment, before running them
+ in production. In other words, I will not be held accountable
+ if one of my scripts is responsible for an RGE (Resume Generating Event).
+ If you have questions or issues, please reach out/report them on
+ my GitHub page. Thanks for your support!
+[-------------------------------------DISCLAIMER-------------------------------------]
+.LINK
+    https://github.com/vN3rd
+#>
+
+# Define title of launcher tabs
+$tabPage1Title = ""
+$tabPage2Title = ""
+
+# ===============================================================#
+# Tab Page 1 [Buttons 1-10 appear on the first tab]              #
+# ===============================================================#
+
+$CustomButton1_Text = ""
+function Button1-CustomFunction {}
+
+$CustomButton2_Text = ""
+function Button2-CustomFunction {}
+
+$CustomButton3_Text = ""
+function Button3-CustomFunction {}
+
+$CustomButton4_Text = ""
+function Button4-CustomFunction {}
+
+$CustomButton5_Text = ""
+function Button5-CustomFunction {}
+
+$CustomButton6_Text = ""
+function Button6-CustomFunction {}
+
+$CustomButton7_Text = ""
+function Button7-CustomFunction {}
+
+$CustomButton8_Text = ""
+function Button8-CustomFunction {}
+
+$CustomButton9_Text = ""
+function Button9-CustomFunction {}
+
+$CustomButton10_Text = ""
+function Button10-CustomFunction {}
+
+# ===============================================================#
+# Tab Page 2 [Buttons 11-20 appear on the second tab]            #
+# ===============================================================#
+
+$CustomButton11_Text = ""
+function Button11-CustomFunction {}
+
+$CustomButton12_Text = ""
+function Button12-CustomFunction {}
+
+$CustomButton13_Text = ""
+function Button13-CustomFunction {}
+
+$CustomButton14_Text = ""
+function Button14-CustomFunction {}
+
+$CustomButton15_Text = ""
+function Button15-CustomFunction {}
+
+$CustomButton16_Text = ""
+function Button16-CustomFunction {}
+
+$CustomButton17_Text = ""
+function Button17-CustomFunction {}
+
+$CustomButton18_Text = ""
+function Button18-CustomFunction {}
+
+$CustomButton19_Text = ""
+function Button19-CustomFunction {}
+
+$CustomButton20_Text = ""
+function Button20-CustomFunction {}
+'
+
+	New-Item -ItemType File -Name 'PowerLauncher_Config.ps1' -Path "$env:allusersprofile\PowerLauncher" -Value $ConfigFileData
 }
 
 #endregion Declare Functions
