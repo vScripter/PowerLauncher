@@ -7,6 +7,7 @@ ehthumbs.db
 *.psbuild
 *.preview.ps1
 *.run.ps1
+*.temppoint.*
 
 # Folder config file
 Desktop.ini
