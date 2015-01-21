@@ -207,7 +207,7 @@ function Create-ConfigFile
  my GitHub page. Thanks for your support!
 [-------------------------------------DISCLAIMER-------------------------------------]
 .LINK
-    https://github.com/vN3rd
+    https://github.com/vScripter
 #>
 
 # Define title of launcher tabs

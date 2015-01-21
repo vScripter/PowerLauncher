@@ -36,7 +36,7 @@
  my GitHub page. Thanks for your support!
 [-------------------------------------DISCLAIMER-------------------------------------]
 .LINK
-    https://github.com/vN3rd
+    https://github.com/vScripter
 #>
 
 $tabPage1Title = "Apps"
