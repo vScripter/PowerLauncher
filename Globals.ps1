@@ -3,38 +3,37 @@
 #--------------------------------------------
 
 #region Declare Functions
-function Tab-Title
-{
-	if (($tabPage1Title -eq "") -or ($tabPage1Title -eq $null))
-	{
+
+function Tab-Title {
+	
+	if (($tabPage1Title -eq "") -or ($tabPage1Title -eq $null)) {
 		$tabPg1.Text = "Page 1"
-	} else
-	{
+	} else {
 		$tabPg1.Text = $tabPage1Title
 	}
-
-	if (($tabPage2Title -eq "") -or ($tabPage2Title -eq $null))
-	{
+	
+	if (($tabPage2Title -eq "") -or ($tabPage2Title -eq $null)) {
 		$tabPg2.Text = "Page 2"
-	} else
-	{
+	} else {
 		$tabPg2.Text = $tabPage2Title
 	}
-}# end function Tab-Title
+	
+} # end function Tab-Title
 
-function Get-ScriptDirectory
-{
-	if ($hostinvocation -ne $null)
-	{
+
+function Get-ScriptDirectory {
+	
+	if ($hostinvocation -ne $null) {
 		Split-Path $hostinvocation.MyCommand.path
-	} else
-	{
+	} else {
 		Split-Path $script:MyInvocation.MyCommand.Path
-	}
-}
+	} # end if/else
+	
+} # end function Get-ScriptDirectory
 
-function Load-ConfigFileVariables
-{
+
+function Load-ConfigFileVariables {
+	
 	$btnCustom1.Text = $CustomButton1_Text
 	$btnCustom2.Text = $CustomButton2_Text
 	$btnCustom3.Text = $CustomButton3_Text
@@ -55,12 +54,12 @@ function Load-ConfigFileVariables
 	$btnCustom18.Text = $CustomButton18_Text
 	$btnCustom19.Text = $CustomButton19_Text
 	$btnCustom20.Text = $CustomButton20_Text
+	
+} # end function Load-ConfigFileVariables
 
 
-}
-
-function Load-Buttons
-{
+function Load-Buttons {
+	
 	if ($btnCustom1.Text -eq '') { $btnCustom1.Text = "Custom Button 1"; $btnCustom1.Enabled = $false }
 	if ($btnCustom2.Text -eq '') { $btnCustom2.Text = "Custom Button 2"; $btnCustom2.Enabled = $false }
 	if ($btnCustom3.Text -eq '') { $btnCustom3.Text = "Custom Button 3"; $btnCustom3.Enabled = $false }
@@ -81,11 +80,11 @@ function Load-Buttons
 	if ($btnCustom18.Text -eq '') { $btnCustom18.Text = "Custom Button 18"; $btnCustom18.Enabled = $false }
 	if ($btnCustom19.Text -eq '') { $btnCustom19.Text = "Custom Button 19"; $btnCustom19.Enabled = $false }
 	if ($btnCustom20.Text -eq '') { $btnCustom20.Text = "Custom Button 20"; $btnCustom20.Enabled = $false }
+	
+} # end function Load-Buttons
 
-}
-
-function logstamp
-{
+function logstamp {
+	
 	#returns a padded timestamp string like 200705231132
 	$now = Get-Date
 	$yr = $now.Year.ToString()
@@ -93,32 +92,30 @@ function logstamp
 	$dy = $now.Day.ToString()
 	$hr = $now.Hour.ToString()
 	$mi = $now.Minute.ToString()
-
-	if ($mo.length -lt 2)
-	{
+	
+	if ($mo.length -lt 2) {
 		$mo = "0" + $mo #pad single digit months with leading zero
 	}
-
-	if ($dy.length -lt 2)
-	{
+	
+	if ($dy.length -lt 2) {
 		$dy = "0" + $dy #pad single digit day with leading zero
 	}
-
-	if ($hr.length -lt 2)
-	{
+	
+	if ($hr.length -lt 2) {
 		$hr = "0" + $hr #pad single digit hour with leading zero
 	}
-
-	if ($mi.length -lt 2)
-	{
+	
+	if ($mi.length -lt 2) {
 		$mi = "0" + $mi #pad single digit minute with leading zero
 	}
-
+	
 	write-output $yr$mo$dy$hr$mi
-}
+	
+} # end function logstamp
 
-function Disable-Buttons
-{
+
+function Disable-Buttons {
+	
 	$btnCustom1.Enabled = $false
 	$btnCustom2.Enabled = $false
 	$btnCustom3.Enabled = $false
@@ -139,10 +136,12 @@ function Disable-Buttons
 	$btnCustom18.Enabled = $false
 	$btnCustom19.Enabled = $false
 	$btnCustom20.Enabled = $false
-}
+	
+} # end function Disable-Buttons
 
-function Enable-Buttons
-{
+
+function Enable-Buttons {
+	
 	$btnCustom1.Enabled = $true
 	$btnCustom2.Enabled = $true
 	$btnCustom3.Enabled = $true
@@ -163,11 +162,11 @@ function Enable-Buttons
 	$btnCustom18.Enabled = $true
 	$btnCustom19.Enabled = $true
 	$btnCustom20.Enabled = $true
+	
+} # end function Enable-Buttons
 
-}
-
-function Create-ConfigFile
-{
+function Create-ConfigFile {
+	
 	$ConfigFileData = '
 <#
 .SYNOPSIS
@@ -194,8 +193,6 @@ function Create-ConfigFile
 
     This would configure the button named "Custom Button 11" to open the "C:\GitHub" directory, using the Invoke-Item cmdlet
 .NOTES
-    [+] 20140909_K.Kirkpatrick_Created
-    [+] 20140910_K.Kirkpatrick_Modified format to accomidate new button format
 
 [-------------------------------------DISCLAIMER-------------------------------------]
  All script are provided as-is with no implicit
@@ -282,11 +279,13 @@ function Button19-CustomFunction {}
 $CustomButton20_Text = ""
 function Button20-CustomFunction {}
 '
-
+	
 	New-Item -ItemType File -Name 'PowerLauncher_Config.ps1' -Path "$env:allusersprofile\PowerLauncher" -Value $ConfigFileData
-}
+	
+}  # end function Create-ConfigFile
 
 #endregion Declare Functions
+
 #region Declare Variables
 
 [string]$ScriptDirectory = Get-ScriptDirectory
@@ -297,6 +296,6 @@ $ConfigFilePath = "$ScriptDirectory\PowerLauncher_Config.ps1"
 
 $Log = "$ScriptDirectory\PowerLauncher.log"
 
-$AppVersion = "v1.2.0"
+$AppVersion = "v1.3.0"
 
 #endregion Declare Variables
