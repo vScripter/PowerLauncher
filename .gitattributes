@@ -1,27 +1,26 @@
 # Auto detect text files and perform LF normalization
 * text=auto
 
-# Custom for PowerShell
-*.ps1 text eol=crlf
-*.psd1 text eol=crlf
-*.psm1 text eol=crlf
-
 # Custom for Visual Studio
 *.cs     diff=csharp
-*.sln    merge=union
-*.csproj merge=union
-*.vbproj merge=union
-*.fsproj merge=union
-*.dbproj merge=union
+
+# Custom for PowerShell and PowerShell Studio
+*.ps1 text eol=crlf
+*.psm1 text eol=crlf
+*.psd1 diff=astextplain
+*.psproj diff=astextplain
+*.psf text diff=astextplain
+*.pss text diff=astextplain
+*.psbuild diff=astextplain
 
 # Standard to msysgit
-*.doc	 diff=astextplain
-*.DOC	 diff=astextplain
+*.doc    diff=astextplain
+*.DOC    diff=astextplain
 *.docx diff=astextplain
 *.DOCX diff=astextplain
 *.dot  diff=astextplain
 *.DOT  diff=astextplain
 *.pdf  diff=astextplain
-*.PDF	 diff=astextplain
-*.rtf	 diff=astextplain
-*.RTF	 diff=astextplain
+*.PDF    diff=astextplain
+*.rtf    diff=astextplain
+*.RTF    diff=astextplain
